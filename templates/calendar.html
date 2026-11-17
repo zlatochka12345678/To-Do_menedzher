@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IT.TEAM — Календарь</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <header class="app-header">
+            <div class="status-bar">
+                <span>12:34</span>
+                <span class="status-icons">▮▮▮ ⏻</span>
+            </div>
+            <div class="brand">
+                <span class="brand-strong">IT.</span><span class="brand-light">TEAM</span>
+                <button class="notif-btn" aria-label="Уведомления">🔔</button>
+            </div>
+            <div class="main-nav">
+                <h1>Календарь</h1>
+                <button class="small-btn">Сегодня</button>
+            </div>
+        </header>
+
+        <!-- Мини-календарь -->
+        <div class="calendar-widget" id="calendarWidget">
+            <div class="calendar-header">
+                <span class="calendar-month" id="calendarMonth">Ноябрь 2026</span>
+                <div class="calendar-nav">
+                    <button class="calendar-arrow" id="prevMonth">‹</button>
+                    <button class="calendar-arrow" id="nextMonth">›</button>
+                </div>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+
+        <!-- Задачи выбранного дня -->
+        <div class="calendar-section-title" id="calendarDayTitle">16 ноября — сегодня</div>
+        <ul class="task-list calendar-task-list" id="calendarTaskList"></ul>
+
+        <nav class="bottom-nav">
+            <button class="nav-item" onclick="location.href='/'">
+                <span class="nav-icon">📋</span> Задачи
+            </button>
+            <button class="nav-item active" onclick="location.href='/calendar'">
+                <span class="nav-icon">📅</span> Календарь
+            </button>
+            <button class="nav-item" onclick="location.href='/group'">
+                <span class="nav-icon">👥</span> Группа
+            </button>
+        </nav>
+    </div>
+
+    <script src="/static/calendar.js"></script>
+</body>
+</html>

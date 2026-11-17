@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IT.TEAM — Моя группа</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <header class="app-header">
+            <div class="status-bar">
+                <span>12:34</span>
+                <span class="status-icons">▮▮▮ ⏻</span>
+            </div>
+            <div class="brand">
+                <span class="brand-strong">IT.</span><span class="brand-light">TEAM</span>
+                <button class="notif-btn" aria-label="Уведомления">🔔</button>
+            </div>
+            <div class="main-nav">
+                <h1>Моя группа</h1>
+                <button class="small-btn">ИС-23</button>
+            </div>
+        </header>
+
+        <!-- Статистика группы -->
+        <div class="group-stats">
+            <div class="group-stat-card">
+                <span class="group-stat-num">24</span>
+                <span class="group-stat-label">Студента</span>
+            </div>
+            <div class="group-stat-card">
+                <span class="group-stat-num">7</span>
+                <span class="group-stat-label">Активных задач</span>
+            </div>
+            <div class="group-stat-card">
+                <span class="group-stat-num">16</span>
+                <span class="group-stat-label">Сдано сегодня</span>
+            </div>
+        </div>
+
+        <!-- Список участников -->
+        <div class="group-section-title">Состав группы</div>
+        <ul class="member-list" id="memberList"></ul>
+
+        <nav class="bottom-nav">
+            <button class="nav-item" onclick="location.href='/'">
+                <span class="nav-icon">📋</span> Задачи
+            </button>
+            <button class="nav-item" onclick="location.href='/calendar'">
+                <span class="nav-icon">📅</span> Календарь
+            </button>
+            <button class="nav-item active" onclick="location.href='/group'">
+                <span class="nav-icon">👥</span> Группа
+            </button>
+        </nav>
+    </div>
+
+    <script src="/static/group.js"></script>
+</body>
+</html>

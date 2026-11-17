@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IT.TEAM — Задачи группы</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="phone-container">
+        <header class="app-header">
+            <div class="status-bar">
+                <span>12:34</span>
+                <span class="status-icons">▮▮▮ ⏻</span>
+            </div>
+            <div class="brand">
+                <span class="brand-strong">IT.</span><span class="brand-light">TEAM</span>
+                <button class="notif-btn" id="notifBtn" aria-label="Уведомления">🔔</button>
+            </div>
+            <div class="main-nav">
+                <h1>Задачи группы</h1>
+                <button class="add-task-toggle" id="openModalBtn" aria-label="Добавить задачу">+</button>
+            </div>
+        </header>
+
+        <div class="stats-badges">
+            <div class="stat-box current-box">
+                <span class="stat-num" id="currentCount">0</span>
+                <span class="stat-label">Текущие задачи</span>
+            </div>
+            <div class="stat-box completed-box">
+                <span class="stat-num" id="completedCount">0</span>
+                <span class="stat-label">Выполненные</span>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-filter="all">Все задачи</button>
+            <button class="tab-btn" data-filter="current">Текущие</button>
+            <button class="tab-btn" data-filter="completed">Выполненные</button>
+        </div>
+
+        <ul class="task-list" id="taskList"></ul>
+
+        <nav class="bottom-nav">
+            <button class="nav-item active" onclick="location.href='/'">
+                <span class="nav-icon">📋</span> Задачи
+            </button>
+            <button class="nav-item" onclick="location.href='/calendar'">
+                <span class="nav-icon">📅</span> Календарь
+            </button>
+            <button class="nav-item" onclick="location.href='/group'">
+                <span class="nav-icon">👥</span> Группа
+            </button>
+        </nav>
+
+        <!-- Модальное окно создания задачи -->
+        <div class="modal-overlay" id="modalOverlay">
+            <form class="modal-content" id="taskForm">
+                <div class="modal-header">
+                    <button type="button" class="modal-back" id="closeModalBtn">‹</button>
+                    <h3>Новая задача</h3>
+                    <span class="modal-step">Шаг 1 из 3</span>
+                </div>
+                <label class="field-label">Название задачи</label>
+                <input type="text" id="taskTitle" placeholder="Подготовить отчет по практике" required>
+                <label class="field-label">Описание</label>
+                <textarea id="taskSubject" placeholder="Описание" rows="2" required></textarea>
+                <label class="field-label">Приоритет</label>
+                <div class="priority-group" id="priorityGroup">
+                    <button type="button" class="prio-btn" data-prio="high">Высокий</button>
+                    <button type="button" class="prio-btn active" data-prio="medium">Средний</button>
+                    <button type="button" class="prio-btn" data-prio="low">Низкий</button>
+                </div>
+                <label class="field-label">Дедлайн</label>
+                <input type="datetime-local" id="taskDeadline" required>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">Создать задачу</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Экран деталей задачи -->
+        <div class="modal-overlay" id="detailOverlay">
+            <div class="modal-content detail-content">
+                <div class="modal-header">
+                    <button type="button" class="modal-back" id="closeDetailBtn">‹</button>
+                    <h3>Детали задачи</h3>
+                    <button type="button" class="icon-btn" id="deleteDetailBtn">🗑</button>
+                </div>
+                <div class="detail-body" id="detailBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
